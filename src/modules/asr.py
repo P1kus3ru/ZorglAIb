@@ -36,12 +36,12 @@ def speech_to_text(filepath, task, language):
 
 
 if __name__ == '__main__':
-    # test if whisper is up and running
-    print('Testing Whisper on English speech sample.')
+    # test if ASR is up and running
+    print('Testing ASR on  speech sample.')
     print(f'Actual audio: Oh. Honestly, I could not be bothered to play this game to full completion.'
           f'The narrator is obnoxious and unfunny, with his humor and dialogue proving to be more irritating than '
           f"entertaining.\nWhisper audio: {speech_to_text(SAMPLE_EN_FILEPATH, 'transcribe', 'en')}\n")
 
-    print('Testing Whisper on Japanese speech sample.')
+    print('Testing ASR on  speech sample.')
     print(f'Actual translation: How is this dress? It suits you very well.\n'
           f"Whisper translation: {speech_to_text(SAMPLE_JP_FILEPATH, 'translate', 'ja')}")

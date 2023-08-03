@@ -80,7 +80,6 @@ if __name__ == '__main__':
     recording = False
     stream = None
 
-
     keyboard.on_press_key(RECORD_KEY, on_press_key)
     keyboard.on_release_key(RECORD_KEY, on_release_key)
 
@@ -93,4 +92,4 @@ if __name__ == '__main__':
                 sleep(0.5)
 
     except KeyboardInterrupt:
-        print('Closing voice translator.')
+        print('Closing voice transcriber.')
