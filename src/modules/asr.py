@@ -11,6 +11,10 @@ REQUEST_TIMEOUT = int(getenv('REQUEST_TIMEOUT'))
 SAMPLE_JP_FILEPATH = Path(__file__).resolve().parent.parent / r'audio\samples\japanese_speech_sample.wav'
 SAMPLE_EN_FILEPATH = Path(__file__).resolve().parent.parent / r'audio\samples\english_speech_sample.wav'
 
+SAMPLE_NL_VLOEIEND = Path(__file__).resolve().parent.parent / r'audio\samples\english_speech_sample.wav'
+SAMPLE_NL_STOTTER = Path(__file__).resolve().parent.parent / r'audio\samples\english_speech_sample.wav'
+SAMPLE_NL_STOTTER = Path(__file__).resolve().parent.parent / r'audio\samples\english_speech_sample.wav'
+
 
 def speech_to_text(filepath, task, language):
     try:
@@ -38,7 +42,7 @@ def speech_to_text(filepath, task, language):
 if __name__ == '__main__':
     # test if ASR is up and running
     print('Testing ASR on  speech sample.')
-    print(f'Actual audio: Oh. Honestly, I could not be bothered to play this game to full completion.'
+    print(f'Actual audio: Oh. Honestly, I could not be bothered to play this game to full completion. '
           f'The narrator is obnoxious and unfunny, with his humor and dialogue proving to be more irritating than '
           f"entertaining.\nWhisper audio: {speech_to_text(SAMPLE_EN_FILEPATH, 'transcribe', 'en')}\n")
 
