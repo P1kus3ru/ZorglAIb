@@ -1,7 +1,8 @@
 from pathlib import Path
 
 # from asr_whisper import speech_to_text_whisper as speech_to_text
-from asr_vosk import speech_to_text_vosk as speech_to_text
+from asr_sr import speech_to_text_sr as speech_to_text
+# from asr_vosk import speech_to_text_vosk as speech_to_text
 
 SAMPLE_JP_FILEPATH = Path(__file__).resolve().parent.parent / r'audio\samples\japanese_speech_sample.wav'
 SAMPLE_EN_FILEPATH = Path(__file__).resolve().parent.parent / r'audio\samples\english_speech_sample.wav'
