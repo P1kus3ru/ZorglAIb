@@ -4,7 +4,6 @@ from os import getenv
 import requests
 from dotenv import load_dotenv
 
-import time
 
 load_dotenv()
 
@@ -15,7 +14,6 @@ TARGET_LANGUAGE = getenv('TARGET_LANGUAGE')
 
 
 def speech_to_text_whisper(filepath):
-    start_time = time.time()
     try:
         with open(filepath, 'rb') as infile:
             files = {'audio_file': infile}
@@ -35,5 +33,4 @@ def speech_to_text_whisper(filepath):
         print(f'An unknown error has occurred: {e}')
         return None
 
-    print("ASR took %.2f seconds" % (time.time() - start_time))
     return r.json()['text'].strip()
