@@ -1,30 +1,64 @@
 import speech_recognition as sr
+from asr_whisper import speech_to_text_whisper
 
-def speech_to_text_sr(filepath):
+def speech_to_text(filepath, model):
+    match model:
+        case 'sphinx':
+            return speech_to_text_sphinx(filepath)
+        case 'google':
+            return speech_to_text_google(filepath)
+        case 'wit':
+            return speech_to_text_wit(filepath)
+        # case 'azure':
+        #     return speech_to_text_azure(filepath)
+        # case 'bing':
+        #     return speech_to_text_bing(filepath)
+        # case 'houndify':
+        #     return speech_to_text_houndify(filepath)
+        # case 'ibm':
+        #     return speech_to_text_ibm(filepath)
+        case _:
+            return speech_to_text_whisper(filepath)
+
+def speech_to_text_sphinx(filepath):
     
     # use the audio file as the audio source
     r = sr.Recognizer()
-    with sr.AudioFile(filepath) as source:
+    with sr.AudioFile(str(filepath)) as source:
         audio = r.record(source)  # read the entire audio file
 
     # recognize speech using Sphinx
     try:
-        print("Sphinx thinks you said " + r.recognize_sphinx(audio))
+        return r.recognize_sphinx(audio, language="nl-NL")
     except sr.UnknownValueError:
         print("Sphinx could not understand audio")
     except sr.RequestError as e:
         print("Sphinx error; {0}".format(e))
+
+def speech_to_text_google(filepath):
+    
+    # use the audio file as the audio source
+    r = sr.Recognizer()
+    with sr.AudioFile(str(filepath)) as source:
+        audio = r.record(source)  # read the entire audio file
 
     # recognize speech using Google Speech Recognition
     try:
         # for testing purposes, we're just using the default API key
         # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
         # instead of `r.recognize_google(audio)`
-        print("Google Speech Recognition thinks you said " + r.recognize_google(audio))
+        return r.recognize_google(audio, language="nl-NL")
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
+def speech_to_text_wit(filepath):
+    
+    # use the audio file as the audio source
+    r = sr.Recognizer()
+    with sr.AudioFile(str(filepath)) as source:
+        audio = r.record(source)  # read the entire audio file
 
     # # recognize speech using Wit.ai
     # WIT_AI_KEY = "INSERT WIT.AI API KEY HERE"  # Wit.ai keys are 32-character uppercase alphanumeric strings
@@ -35,6 +69,14 @@ def speech_to_text_sr(filepath):
     # except sr.RequestError as e:
     #     print("Could not request results from Wit.ai service; {0}".format(e))
 
+def speech_to_text_google(filepath):
+    
+    # use the audio file as the audio source
+    r = sr.Recognizer()
+    with sr.AudioFile(str(filepath)) as source:
+        audio = r.record(source)  # read the entire audio file
+
+
     # # recognize speech using Microsoft Azure Speech
     # AZURE_SPEECH_KEY = "INSERT AZURE SPEECH API KEY HERE"  # Microsoft Speech API keys 32-character lowercase hexadecimal strings
     # try:
@@ -43,6 +85,13 @@ def speech_to_text_sr(filepath):
     #     print("Microsoft Azure Speech could not understand audio")
     # except sr.RequestError as e:
     #     print("Could not request results from Microsoft Azure Speech service; {0}".format(e))
+
+def speech_to_text_google(filepath):
+    
+    # use the audio file as the audio source
+    r = sr.Recognizer()
+    with sr.AudioFile(str(filepath)) as source:
+        audio = r.record(source)  # read the entire audio file
 
     # # recognize speech using Microsoft Bing Voice Recognition
     # BING_KEY = "INSERT BING API KEY HERE"  # Microsoft Bing Voice Recognition API keys 32-character lowercase hexadecimal strings
@@ -53,6 +102,13 @@ def speech_to_text_sr(filepath):
     # except sr.RequestError as e:
     #     print("Could not request results from Microsoft Bing Voice Recognition service; {0}".format(e))
 
+def speech_to_text_google(filepath):
+    
+    # use the audio file as the audio source
+    r = sr.Recognizer()
+    with sr.AudioFile(str(filepath)) as source:
+        audio = r.record(source)  # read the entire audio file
+
     # # recognize speech using Houndify
     # HOUNDIFY_CLIENT_ID = "INSERT HOUNDIFY CLIENT ID HERE"  # Houndify client IDs are Base64-encoded strings
     # HOUNDIFY_CLIENT_KEY = "INSERT HOUNDIFY CLIENT KEY HERE"  # Houndify client keys are Base64-encoded strings
@@ -62,6 +118,13 @@ def speech_to_text_sr(filepath):
     #     print("Houndify could not understand audio")
     # except sr.RequestError as e:
     #     print("Could not request results from Houndify service; {0}".format(e))
+
+def speech_to_text_google(filepath):
+    
+    # use the audio file as the audio source
+    r = sr.Recognizer()
+    with sr.AudioFile(str(filepath)) as source:
+        audio = r.record(source)  # read the entire audio file
 
     # # recognize speech using IBM Speech to Text
     # IBM_USERNAME = "INSERT IBM SPEECH TO TEXT USERNAME HERE"  # IBM Speech to Text usernames are strings of the form XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX

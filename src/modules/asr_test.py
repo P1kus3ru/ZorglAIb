@@ -1,8 +1,6 @@
 from pathlib import Path
 
-# from asr_whisper import speech_to_text_whisper as speech_to_text
-from asr_sr import speech_to_text_sr as speech_to_text
-# from asr_vosk import speech_to_text_vosk as speech_to_text
+from asr_sr import speech_to_text
 
 SAMPLE_JP_FILEPATH = Path(__file__).resolve().parent.parent / r'audio\samples\japanese_speech_sample.wav'
 SAMPLE_EN_FILEPATH = Path(__file__).resolve().parent.parent / r'audio\samples\english_speech_sample.wav'
@@ -13,28 +11,30 @@ SAMPLE_NL_LICHTESTOTTER = Path(__file__).resolve().parent.parent / r'audio\sampl
 SAMPLE_NL_ZWARESTOTTER = Path(__file__).resolve().parent.parent / r'audio\samples\nederlands_sample_zwarestotter.wav'
 SAMPLE_NL_ZWARESTOTTER2 = Path(__file__).resolve().parent.parent / r'audio\samples\nederlands_sample_zwarestotter2.wav'
 
+MODEL = 'sphinx'
+
 if __name__ == '__main__':
     # test if ASR is up and running
     # print('Testing ASR on EN speech sample.')
     # print(f'Actual audio: Oh. Honestly, I could not be bothered to play this game to full completion.\n '
     #       f'The narrator is obnoxious and unfunny, with his humor and dialogue proving to be more irritating than entertaining.\n'
-    #       f"Whisper audio: {speech_to_text(SAMPLE_EN_FILEPATH)}\n")
+    #       f"Transcription: {speech_to_text(SAMPLE_EN_FILEPATH)}\n")
 
     # print('Testing ASR on JA speech sample.')
     # print(f'Actual translation: How is this dress? It suits you very well.\n'
-    #       f"Whisper translation: {speech_to_text(SAMPLE_JP_FILEPATH, 'translate', 'ja')}\n")
+    #       f"Transcription: {speech_to_text(SAMPLE_JP_FILEPATH, 'translate', 'ja')}\n")
     
     print('Testing ASR on NL speech sample.')
-    print(f"Whisper audio: {speech_to_text(SAMPLE_NL_VLOEIEND)}\n")
+    print(f"Transcription: {speech_to_text(SAMPLE_NL_VLOEIEND, MODEL)}\n")
     
     print('Testing ASR on NL speech sample.')
-    print(f"Whisper audio: {speech_to_text(SAMPLE_NL_VLOEIEND2)}\n")
+    print(f"Transcription: {speech_to_text(SAMPLE_NL_VLOEIEND2, MODEL)}\n")
     
-    print('Testing ASR on NL speech sample.')
-    print(f"Whisper audio: {speech_to_text(SAMPLE_NL_LICHTESTOTTER)}\n")
+    # print('Testing ASR on NL speech sample.')
+    # print(f"Transcription: {speech_to_text(SAMPLE_NL_LICHTESTOTTER)}\n")
     
-    print('Testing ASR on NL speech sample.')
-    print(f"Whisper audio: {speech_to_text(SAMPLE_NL_ZWARESTOTTER)}\n")
+    # print('Testing ASR on NL speech sample.')
+    # print(f"Transcription: {speech_to_text(SAMPLE_NL_ZWARESTOTTER)}\n")
     
-    print('Testing ASR on NL speech sample.')
-    print(f"Whisper audio: {speech_to_text(SAMPLE_NL_ZWARESTOTTER2)}\n")
+    # print('Testing ASR on NL speech sample.')
+    # print(f"Transcription: {speech_to_text(SAMPLE_NL_ZWARESTOTTER2)}\n")

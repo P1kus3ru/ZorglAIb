@@ -8,7 +8,7 @@ import pyaudio
 import requests
 from dotenv import load_dotenv
 
-from modules.asr_whisper import speech_to_text_whisper as speech_to_text
+from modules.asr_sr import speech_to_text
 
 load_dotenv()
 
@@ -56,7 +56,7 @@ def on_release_key(_):
 
     # transcribe audio
     try:
-        nl_speech = speech_to_text(MIC_AUDIO_PATH)
+        nl_speech = speech_to_text(MIC_AUDIO_PATH, MODEL)
     except requests.exceptions.JSONDecodeError:
         print('Too many requests to process at once')
         return
@@ -69,6 +69,7 @@ def on_release_key(_):
 
 
 if __name__ == '__main__':
+    MODEL = input("Which model do you want to use? (sphinx, google, wit, whisper)")
     p = pyaudio.PyAudio()
 
     # get channels and sampling rate of mic
