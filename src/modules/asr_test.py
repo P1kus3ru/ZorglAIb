@@ -11,7 +11,7 @@ SAMPLE_NL_LICHTESTOTTER = Path(__file__).resolve().parent.parent / r'audio\sampl
 SAMPLE_NL_ZWARESTOTTER = Path(__file__).resolve().parent.parent / r'audio\samples\nederlands_sample_zwarestotter.wav'
 SAMPLE_NL_ZWARESTOTTER2 = Path(__file__).resolve().parent.parent / r'audio\samples\nederlands_sample_zwarestotter2.wav'
 
-MODEL = 'google'
+MODEL = 'azure'
 
 if __name__ == '__main__':
     # test if ASR is up and running
