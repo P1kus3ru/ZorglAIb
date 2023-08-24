@@ -11,7 +11,7 @@ Indien mogelijk moet je deze draaien op een andere server op je lokale netwerk o
 
 Voer dit commando uit om deze hele repository te klonen.
 
-``git clone https://github.com/SociallyIneptWeeb/LanguageLeapAI``
+``git clone https://github.com/P1kus3ru/ZorglAIb.git``
 
 Voer het volgende commando uit in de hoofdmap om de vereiste python afhankelijkheden te installeren.
 
@@ -24,5 +24,5 @@ Voer het volgende commando uit in de hoofdmap om de vereiste python afhankelijkh
 ### Docker
 
 Als u van plan bent om de docker containers te draaien, moet u ervoor zorgen dat Docker Compose geïnstalleerd is.
-U kunt deze instructies [hier] (https://docs.docker.com/desktop/install/windows-install/) volgen om Docker Compose te installeren.
+U kunt deze instructies [hier](https://docs.docker.com/desktop/install/windows-install/) volgen om Docker Compose te installeren.
 

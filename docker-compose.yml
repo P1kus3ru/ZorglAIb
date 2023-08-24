@@ -5,7 +5,7 @@ services:
   whisper:
     image: onerahmet/openai-whisper-asr-webservice:latest-gpu
     environment:
-      ASR_MODEL: small
+      ASR_MODEL: medium
     ports:
       - "9000:9000"
     deploy:
